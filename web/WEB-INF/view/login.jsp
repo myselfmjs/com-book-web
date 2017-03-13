@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
-<%--<script src="lib/jquery/jquery.min.jsp"></script>--%>
+<%--<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>--%>
+<script src="/lib/jquery/jquery-3.0.0.min.js"></script>
 <style type="text/css">
     .td_button{ margin-right: 20px; }
 
@@ -46,6 +46,11 @@
     function Reset() {
         window.location.href = "";
     }
+
+    //设置焦点
+    $(function () {
+        $("#username")[0].focus();
+    });
 </script>
 </body>
 </html>
