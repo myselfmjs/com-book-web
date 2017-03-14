@@ -2,10 +2,15 @@ package com.book.web.controller;
 
 
 import com.book.web.pojo.User;
+import com.book.web.pojo.raw.Admin;
+import com.book.web.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+
+
+    @Autowired
+     UserService userService;
 
     /**
      * 登录校验
@@ -64,9 +73,22 @@ public class UserController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "deleteLogin",method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteLogin",method = RequestMethod.GET)
     public String DeleteLogin(HttpServletRequest request){
         request.getSession().removeAttribute("user");
         return "redirect:/user/login";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/index",method = RequestMethod.POST)
+    public  String Index(Model model,@RequestParam(required = false) String id){
+     //   JsonResponseEntity<Object> response = new JsonResponseEntity<Object>();
+        System.out.println("id__________:" + id);
+        Admin admin = userService.setListPage();
+        model.addAttribute("admin",admin);
+        System.out.println("three two one");
+        /*response.setCode(1);
+        response.setMsg("success");*/
+        return "success";
     }
 }

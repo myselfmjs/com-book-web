@@ -11,13 +11,12 @@
 
     <!--指明 controller 所在包，并扫描其中的注解-->
     <context:component-scan base-package="com.book.web.controller"/>
-
     <!-- 静态资源(js、image等)的访问 -->
     <mvc:default-servlet-handler/>
 
     <!-- 开启注解 -->
     <mvc:annotation-driven/>
-    
+    <!--<context:component-scan base-package="com.book.web" />-->
     <!--配置拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
