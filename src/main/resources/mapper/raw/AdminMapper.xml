@@ -13,7 +13,6 @@
     select 
     <include refid="Base_Column_List" />
     from sys_admin
-    where id = #{id}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from library..sys_admin

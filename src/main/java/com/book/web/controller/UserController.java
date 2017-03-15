@@ -1,6 +1,7 @@
 package com.book.web.controller;
 
 
+import com.book.web.common.JsonResponseEntity;
 import com.book.web.pojo.User;
 import com.book.web.pojo.raw.Admin;
 import com.book.web.service.UserService;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * Created by majunsheng on 2017/3/9.
@@ -63,7 +67,8 @@ public class UserController {
 
 
         model.addAttribute("userName", ((User) request.getSession().getAttribute("user")).getUsername());
-
+        List<Admin> admin = userService.setListPage();
+        model.addAttribute("admin",admin);
         return "userLogin";
     }
 
@@ -79,16 +84,37 @@ public class UserController {
         return "redirect:/user/login";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/index",method = RequestMethod.POST)
-    public  String Index(Model model,@RequestParam(required = false) String id){
-     //   JsonResponseEntity<Object> response = new JsonResponseEntity<Object>();
-        System.out.println("id__________:" + id);
-        Admin admin = userService.setListPage();
-        model.addAttribute("admin",admin);
-        System.out.println("three two one");
-        /*response.setCode(1);
-        response.setMsg("success");*/
-        return "success";
+   // @ResponseBody
+    public  void Index(@RequestParam(required = false) String id,
+                         HttpServletRequest request,HttpServletResponse response){
+        System.out.println("过来了");
+        String result = "{\"name\":\"" + id+ "\"}";
+        PrintWriter out = null;
+        System.out.println(result);
+        //修改协议头,声明返回json格式.然后输出
+        response.setContentType("application/json");
+        try {
+            out = response.getWriter();
+            out.write(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/list",method = RequestMethod.POST)
+    @ResponseBody
+    public  Admin List(Model model,@RequestParam(required = false) String id){
+        JsonResponseEntity<Object> response = new JsonResponseEntity();
+        Admin admin =null;
+        try {
+             //admin = userService.setListPage();
+            model.addAttribute("admin",admin);
+            response.setCode(1);
+        }catch (Exception e){
+            response.setCode(0);
+            e.printStackTrace();
+        }
+         return admin;
     }
 }

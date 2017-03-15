@@ -3,6 +3,8 @@ package com.book.web.mapper.raw;
 import com.book.web.pojo.raw.Admin;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface AdminMapper {
     int deleteByPrimaryKey(Integer id);
@@ -11,7 +13,7 @@ public interface AdminMapper {
 
     int insertSelective(Admin record);
 
-    Admin selectByPrimaryKey(Integer id);
+    List<Admin> selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Admin record);
 

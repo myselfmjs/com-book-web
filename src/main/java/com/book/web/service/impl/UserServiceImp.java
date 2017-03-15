@@ -6,6 +6,8 @@ import com.book.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
  * Created by majunsheng on 2017/3/14.
@@ -18,9 +20,9 @@ public class UserServiceImp implements UserService {
     AdminMapper adminMapper;
 
     @Override
-    public Admin setListPage() {
+    public List<Admin> setListPage() {
         Integer integer = 1;
-        Admin admin = adminMapper.selectByPrimaryKey(integer);
+        List<Admin> admin = adminMapper.selectByPrimaryKey(integer);
         return admin;
     }
 }
