@@ -42,7 +42,7 @@
         $.ajax({
             type: 'post',
            /* async:false,*/
-            url:"/user/login",
+            url:"/user/list",
             data:{'id':1},
             dataType:'json',
             success: function (data) {

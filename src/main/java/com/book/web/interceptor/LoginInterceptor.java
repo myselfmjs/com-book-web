@@ -16,6 +16,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object pojo) throws Exception {
         User user =(User) request.getSession().getAttribute("user");
+        String user1 = request.getParameter("user");
         if(user == null){
             response.sendRedirect("/");
             return false;

@@ -11,6 +11,7 @@
 
 
     <properties>
+        <!-- spring版本号-->
         <spring.version>4.1.1.RELEASE</spring.version>
         <!-- mybatis版本号 -->
         <mybatis.version>3.2.6</mybatis.version>
@@ -19,6 +20,8 @@
         <log4j.version>1.2.17</log4j.version>
     </properties>
 
+
+    <!--Spring 配置Begin-->
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -95,7 +98,7 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
+        <!--Spring 配置End-->
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>org.springframework.transaction</artifactId>
@@ -137,6 +140,11 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
         <!-- 日志文件管理包 -->
         <!-- log start -->
         <dependency>
@@ -152,8 +160,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.1.41</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -166,13 +172,7 @@
             <version>${slf4j.version}</version>
         </dependency>
         <!-- log end -->
-        <!-- 映入JSON -->
-
-        <!--<dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
-        </dependency>-->
+     <!--JSON  start-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -188,8 +188,9 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.1.0</version>
         </dependency>
+      <!--JSON  end-->
 
-        <!-- 上传组件包 -->
+        <!-- 上传组件包 start-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
@@ -205,6 +206,7 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
+     <!-- 上传组件包 end-->
     </dependencies>
 
     <build>

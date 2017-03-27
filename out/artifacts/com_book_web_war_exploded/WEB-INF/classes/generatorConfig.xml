@@ -9,7 +9,7 @@
     <context id="testTables" targetRuntime="MyBatis3">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="true" />
+            <property name="suppressAllComments" value="false" />
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -47,12 +47,18 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table catalog="library" schema="library" tableName="sys_admin" domainObjectName="Admin"
+        <!-- 登录用户表-->
+        <!--<table catalog="library" schema="library" tableName="sys_admin" domainObjectName="Admin"
                enableCountByExample="false" enableSelectByExample="false"
-               enableDeleteByExample="false" enableUpdateByExample="false"></table>
+               enableDeleteByExample="false" enableUpdateByExample="false"></table>-->
+        <!--菜单表-->
        <!-- <table catalog="library" schema="library" tableName="sys_menu" domainObjectName="Menu"
                enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false"></table>-->
         <!--<table schema="" tableName="success_killed"></table>-->
+        <!--Book表-->
+        <table catalog="library" schema="book" tableName="book" domainObjectName="Book"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false"></table>
     </context>
 </generatorConfiguration>

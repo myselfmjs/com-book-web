@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.web.mapper.raw.BookMapper" >
+  <resultMap id="BaseResultMap" type="com.book.web.pojo.raw.Book" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="book_name" property="bookName" jdbcType="VARCHAR" />
+    <result column="book_type" property="bookType" jdbcType="VARCHAR" />
+    <result column="book_price" property="bookPrice" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, book_name, book_type, book_price
+  </sql>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from book
+    where 1=1
+    <if test="id !=null and id !=''">
+     AND id = #{id}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from library..book
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.book.web.pojo.raw.Book" >
+    insert into library..book (id, book_name, book_type, 
+      book_price)
+    values (#{id,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, #{bookType,jdbcType=VARCHAR}, 
+      #{bookPrice,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.book.web.pojo.raw.Book" >
+    insert into library..book
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bookName != null" >
+        book_name,
+      </if>
+      <if test="bookType != null" >
+        book_type,
+      </if>
+      <if test="bookPrice != null" >
+        book_price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookType != null" >
+        #{bookType,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPrice != null" >
+        #{bookPrice,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.book.web.pojo.raw.Book" >
+    update library..book
+    <set >
+      <if test="bookName != null" >
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookType != null" >
+        book_type = #{bookType,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPrice != null" >
+        book_price = #{bookPrice,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.book.web.pojo.raw.Book" >
+    update library..book
+    set book_name = #{bookName,jdbcType=VARCHAR},
+      book_type = #{bookType,jdbcType=VARCHAR},
+      book_price = #{bookPrice,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -36,12 +36,6 @@
     var url = {
         login:"/user/login"
     }
-    /*$(function () {
-        $("#btn").click(function () {
-            window.location.href = url.login;
-        });
-    });*/
-
     //重置
     function Reset() {
         window.location.href = "";
