@@ -70,7 +70,10 @@ public class UserController {
         model.addAttribute("userName", ((User) request.getSession().getAttribute("user")).getUsername());
         List<Admin> admin = userService.setListPage();
         model.addAttribute("admin",admin);
-        return "userLogin";
+        return "userLogin"; //用户登录成功
+       // return "sortArray/inArray"; //数组排序
+        //return "prototype/prototype"; //prototype属性
+       // return "prototype/bibao"; //jquery闭包
     }
 
 
@@ -145,5 +148,10 @@ public class UserController {
     public Book list(Model model, @RequestParam(required = false) String id){
         List<Book> bookList = bookService.findById(id);
         return null;
+    }
+
+    @RequestMapping(value = "downList",method = RequestMethod.GET)
+    public String downList(Model model,@RequestParam(required = false) String id){
+        return "download/downFile";
     }
 }

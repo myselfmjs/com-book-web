@@ -20,6 +20,8 @@
     <input type="button" value="退出" id="btn"><br>
     <input type="button" value="查询" id="search" onclick="search()">
     <br>  <br>  <br>
+    <a href="/user/downList">进入下载页面</a>
+    <a href="/downLoad/list">进入下载一览页面</a>
 <table align="center" border="1px">
     <thead><td>Admin</td><td>Password</td></thead>
     <c:forEach var="row" varStatus="i" items="${admin}">

@@ -53,4 +53,17 @@
     </bean>
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 
+       <!-- <bean id="multipartResolver"
+              class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+        &lt;!&ndash; Declare explicitly, or use <context:annotation-config/> &ndash;&gt;
+        <bean id="fileUploadController" class="com.book.web.controller.DownLoadController"/>-->
+    <!-- file upload -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5000000" />
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="uploadTempDir" value="WEB-INF/downFile"/>
+    </bean>
+
 </beans>
