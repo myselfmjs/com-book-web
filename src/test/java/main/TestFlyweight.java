@@ -13,3 +13,9 @@ public class TestFlyweight {
         artist.setName("周杰伦");
     }
 }
+
+/*
+
+	这是一个测试
+
+*/
