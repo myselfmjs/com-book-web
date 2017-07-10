@@ -1,7 +1,5 @@
 package jdbc;
 
-import com.sun.webpane.platform.ConfigManager;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,19 +9,19 @@ import java.util.Properties;
  * 管理资源文件的类
  *
  */
-public class ConfigManager {
+public class ConfigManagerr {
 
     //声明静态变量
-    private static com.sun.webpane.platform.ConfigManager configManager;
+    private static ConfigManagerr configManagerr;
     private static Properties properties;
 
-    private ConfigManager(){
+    private ConfigManagerr(){
         //获取文件路径
         String configfile = "jdbc.properties";
         //声明新的properties对象
         properties = new Properties();
 
-        InputStream stream = com.sun.webpane.platform.ConfigManager.class.getClassLoader().getResourceAsStream(configfile);
+        InputStream stream = ConfigManagerr.class.getClassLoader().getResourceAsStream(configfile);
 
         //使用load方法读取文件
         try {
@@ -35,11 +33,11 @@ public class ConfigManager {
     }
 
     //创建单例对象
-    private static com.sun.webpane.platform.ConfigManager getintance(){
-        if(configManager == null){
-            configManager = new com.sun.webpane.platform.ConfigManager();
+    public static ConfigManagerr getintance(){
+        if(configManagerr == null){
+            configManagerr = new ConfigManagerr();
         }
-        return configManager;
+        return configManagerr;
     }
 
     public String getValues(String key){

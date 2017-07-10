@@ -38,7 +38,7 @@
             </td>
         </tr>
         <tr><td>4</td><td>4</td><td>4</td>
-            <td  id="MoveUp">
+            <td  id="">
                 <a href="#" name="MoveUp" onclick="check(this,'MoveUp')">上移</a>
                 <a href="#" name="MoveDown" onclick="check(this,'MoveDown')">下移</a>
             </td>

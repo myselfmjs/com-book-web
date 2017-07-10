@@ -57,7 +57,7 @@
                enableDeleteByExample="false" enableUpdateByExample="false"></table>-->
         <!--<table schema="" tableName="success_killed"></table>-->
         <!--Book表-->
-        <table catalog="library" schema="book" tableName="book" domainObjectName="Book"
+        <table catalog="test" schema="student" tableName="student" domainObjectName="Student"
                enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false"></table>
     </context>
