@@ -19,5 +19,9 @@ public class testStr {
         boolean ignoreCase = StringUtils.equalsIgnoreCase(str1, str2);//判断..  不区分大小写
         System.out.println(equals);
         System.out.println(ignoreCase);
+
+        String str3 = " ";
+        System.out.println(StringUtils.isBlank(str3)); //判断是否为空  由空格符组成 /n/t/f/r 都是空  /b 不是
+        System.out.println(StringUtils.isEmpty(str3));  //注意 isEmpty() 与 isBlank() 区别
     }
 }

@@ -74,6 +74,7 @@ public class UserController {
        // return "sortArray/inArray"; //数组排序
         //return "prototype/prototype"; //prototype属性
        // return "prototype/bibao"; //jquery闭包
+       // return "test/table01"; //table移动测试
     }
 
 

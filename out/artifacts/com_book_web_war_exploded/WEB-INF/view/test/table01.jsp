@@ -38,7 +38,7 @@
             </td>
         </tr>
         <tr><td>4</td><td>4</td><td>4</td>
-            <td  id="MoveUp">
+            <td  id="">
                 <a href="#" name="MoveUp" onclick="check(this,'MoveUp')">上移</a>
                 <a href="#" name="MoveDown" onclick="check(this,'MoveDown')">下移</a>
             </td>
@@ -60,9 +60,11 @@
                 return;
             }else {
                 $(data_tr).insertBefore($(data_tr).prev()); //将本身插入到目标tr的前面
-                var sort = $(data_tr).find("td:first").html();
+
+                //每行的序号不变
+                /*var sort = $(data_tr).find("td:first").html();
                 $(data_tr).find("td:first").html(sort - 1);
-                $(data_tr).next().find("td:first").html(sort);
+                $(data_tr).next().find("td:first").html(sort);*/
             }
         }else{
             if($(data_tr).next().html()==null){
@@ -70,10 +72,11 @@
                 return;
             }else {
                 $(data_tr).insertAfter($(data_tr).next()); //将本身插入到目标tr的后面
-                var sort = $(data_tr).find("td:first").html();
+                //每行的序号不变
+                /*var sort = $(data_tr).find("td:first").html();
                 var up = $(data_tr).prev().find("td:first").html();
                 $(data_tr).find("td:first").html(up);
-                $(data_tr).prev().find("td:first").html(sort);
+                $(data_tr).prev().find("td:first").html(sort);*/
             }
         }
         $("a[name='MoveUp']").css("display","inline-block");
