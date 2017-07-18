@@ -110,7 +110,60 @@
 
         console.log(jq);
         console.log(array);*/
+
+        //sort 排序
+        /*var data = [0,4,3,4,3,2,1];
+        data.sort(function (a, b) {
+            return a<b? 1:-1;
+        });
+        console.log(data);*/
+
+        //闭包测试
+       /*var result =  createFunctions();
+       console.log(result());*/
+
+       /*var compare = crateComparison("name");
+       var result = compare({name:"abc"},{name:"def"},{name:"ghi"});
+       console.log(result);*/
+
+       var data = [{name:"abc"},{name:"ghi"},{name:"def"}];
+       var result = data.sort(crateComparison("name"));
+       console.log(result);
+       sayHi("abc");
     });
+
+    // 根据属性名来创建一个比较函数
+    function crateComparison(propertyName) {
+        console.log(propertyName);
+        return function (obj01, obj02) {
+            console.log(obj01 +"-----"+obj02);
+            var value1 = obj01[propertyName];
+            var value2 = obj02[propertyName];
+            console.log(value1 +"-----"+value2);
+            if(value1 < value2){
+                return -1;
+            }else if(value1 > value2){
+                return 1;
+            }else {
+                return 0;
+            }
+        }
+    }
+
+    function createFunctions() {
+        var result = new Array();
+
+        for(var i=0; i<10; i++){
+            result[i] = function () {
+                return i;
+            };
+        }
+        return result;
+    }
+
+    function sayHi(name,message) {
+        alert("Hi" + arguments[0] + arguments[1]);
+    }
 </script>
 </body>
 </html>
