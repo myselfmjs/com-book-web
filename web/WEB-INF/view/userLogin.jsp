@@ -126,14 +126,21 @@
        var result = compare({name:"abc"},{name:"def"},{name:"ghi"});
        console.log(result);*/
 
-       var data = [{name:"abc"},{name:"ghi"},{name:"def"}];
+       /*var data = [{name:"abc"},{name:"ghi"},{name:"def"}];
        var result = data.sort(crateComparison("name"));
        console.log(result);
-       sayHi("abc");
+       sayHi("abc");*/
+
+       //浮点数值精度不如整数型 不要测试特定的浮点值 if(0.1 + 0.2)
+       /*var f1 = 0.1;
+       var f2 = 0.2;
+       console.log(f1 + f2); //输出为：0.30000000000000004 */
+
+
     });
 
     // 根据属性名来创建一个比较函数
-    function crateComparison(propertyName) {
+    /*function crateComparison(propertyName) {
         console.log(propertyName);
         return function (obj01, obj02) {
             console.log(obj01 +"-----"+obj02);
@@ -148,22 +155,23 @@
                 return 0;
             }
         }
-    }
+    }*/
 
-    function createFunctions() {
+    // i的值
+    /*function createFunctions() {
         var result = new Array();
-
         for(var i=0; i<10; i++){
             result[i] = function () {
                 return i;
             };
         }
         return result;
-    }
+    }*/
 
-    function sayHi(name,message) {
+    //arguments 示例
+    /*function sayHi(name,message) {
         alert("Hi" + arguments[0] + arguments[1]);
-    }
+    }*/
 </script>
 </body>
 </html>
