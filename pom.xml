@@ -213,6 +213,19 @@
             <scope>test</scope>
         </dependency>
         <!-- 上传组件包 end-->
+
+        <!--网页Http包  begin-->
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.htmlparser</groupId>
+            <artifactId>htmlparser</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <!--网页Http包  end-->
     </dependencies>
 
     <build>
