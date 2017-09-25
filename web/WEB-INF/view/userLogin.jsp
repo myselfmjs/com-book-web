@@ -74,7 +74,7 @@
                 console.log("x is  " + x);
             }
         })(x);
-        message();
+        message(12);
         x = 12;
         console.log(x);
         message();*/
@@ -122,9 +122,9 @@
        /*var result =  createFunctions();
        console.log(result());*/
 
-       /*var compare = crateComparison("name");
+       var compare = crateComparison("name");
        var result = compare({name:"abc"},{name:"def"},{name:"ghi"});
-       console.log(result);*/
+       console.log(result);
 
        /*var data = [{name:"abc"},{name:"ghi"},{name:"def"}];
        var result = data.sort(crateComparison("name"));
@@ -140,10 +140,9 @@
     });
 
     // 根据属性名来创建一个比较函数
-    /*function crateComparison(propertyName) {
+    function crateComparison(propertyName) {
         console.log(propertyName);
         return function (obj01, obj02) {
-            console.log(obj01 +"-----"+obj02);
             var value1 = obj01[propertyName];
             var value2 = obj02[propertyName];
             console.log(value1 +"-----"+value2);
@@ -155,18 +154,21 @@
                 return 0;
             }
         }
-    }*/
+    }
 
     // i的值
-    /*function createFunctions() {
+    function createFunctions() {
         var result = new Array();
         for(var i=0; i<10; i++){
-            result[i] = function () {
-                return i;
-            };
+
+            result[i] = function (num) {
+                return function () {
+                    return num;
+                }
+            }(i);
         }
         return result;
-    }*/
+    }
 
     //arguments 示例
     /*function sayHi(name,message) {

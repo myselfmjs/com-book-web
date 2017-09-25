@@ -226,6 +226,15 @@
             <version>1.6</version>
         </dependency>
         <!--网页Http包  end-->
+
+        <!--网页 begin-->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
