@@ -10,5 +10,6 @@ public class TestFloat {
         float f2 = (float) 0.2;
         float v = f1 + f2;
         System.out.println(v);
+        System.out.println(f1+f2);
     }
 }
