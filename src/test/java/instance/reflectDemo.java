@@ -11,7 +11,7 @@ public class reflectDemo {
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
         //通过一个对象获得完整的包名和类名
-        // TestReflect();
+         TestReflect();
 
         //实例化Class对象
         //InstanReflect();
@@ -20,10 +20,10 @@ public class reflectDemo {
          RefTest();
 
         //获取某个类的全部方法
-        //MethodTest();
+        MethodTest();
 
         //调用某个类的方法
-        //MethodGet();
+        MethodGet();
 
     }
 
@@ -42,7 +42,7 @@ public class reflectDemo {
         Class<?> class3 = null;
 
         class1 = new reflectDemo().getClass();
-        class2 = Class.forName("test.reflect.reflectDemo");
+        class2 = Class.forName("test.instance.reflectDemo");
         class3 = reflectDemo.class;
 
         //getSuperclass 获取对象的父类
@@ -96,7 +96,7 @@ public class reflectDemo {
         }
     }
     private static void MethodGet() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        Class<?> aClass = Class.forName("pojo.Student");
+        Class<?> aClass = Class.forName("Stream.Student");
         //无参调用
         Method method = aClass.getMethod("GetInvoke");
         Object invoke = method.invoke(aClass.newInstance());

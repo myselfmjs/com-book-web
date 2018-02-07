@@ -59,11 +59,15 @@
         });
     }
 
+    (function($){
+        console.log('122333');
+    })(jQuery);;
+
     $(function () {
         //匿名函数变体 立即调用的函数表达式(自执行函数)
-       /*(function (x,y) {
+       (function (x,y) {
            console.log(x+y);
-        })(5,6);*/
+        })(5,6);
 
         // 函数表达式将被立即调用 因此该模式用于确保代码块的执行上下文按照预期的效果执行
         // 当 x= 42 传入function中 不管外部的x如何变化 内部取得的仍然还是42
@@ -122,9 +126,9 @@
        /*var result =  createFunctions();
        console.log(result());*/
 
-       var compare = crateComparison("name");
+       /*var compare = crateComparison("name");
        var result = compare({name:"abc"},{name:"def"},{name:"ghi"});
-       console.log(result);
+       console.log(result);*/
 
        /*var data = [{name:"abc"},{name:"ghi"},{name:"def"}];
        var result = data.sort(crateComparison("name"));
