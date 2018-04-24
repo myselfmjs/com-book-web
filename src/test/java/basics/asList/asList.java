@@ -23,7 +23,9 @@ public class asList {
 
         List strList = Arrays.asList(arrStr);
         //strList.add("5");
-        //在这里运行时会报错，UnsupportedOperationException 不支持请求操作，从某种意义上来说就是不支持add()操作，源码分析 asList 返回的是return>(a);   这个ArrayList 是Arrays的一个内之类，而且没有定义add()方法，查看其父类有定义 但需要子类实现。所以在这并不能 new ArrayList<T用add方法。解决方法：将asList后的list放到一个新的List中
+        //在这里运行时会报错，UnsupportedOperationException 不支持请求操作，从某种意义上来说就是不支持add()操作，
+        // 源码分析 asList 返回的是return>(a);   这个ArrayList 是Arrays的一个内之类，而且没有定义add()方法，查看其父类有定义 但需要子类实现。
+        // 所以在这并不能 new ArrayList<T用add方法。解决方法：将asList后的list放到一个新的List中
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(strList);
         arrayList.add("5");

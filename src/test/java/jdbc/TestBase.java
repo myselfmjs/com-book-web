@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class TestBase {
     public static void main(String[] args) throws SQLException {
 
-        String sql = "select * from student limit ?";
+        String sql = "select * from student";
         /*List<String> param = new ArrayList<String>();
         param.add("2");*/
 

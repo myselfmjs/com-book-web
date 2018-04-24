@@ -8,6 +8,14 @@ public class intTEST {
 
     public static void main(String[] args) {
 
+        /**
+         *装箱调用的是 valueOf() 方法
+         * Integer 的 valueOf() 方法 有个值域 -128 ~127
+         * 在该值域的值是同一个，否则会重新创建一个Integer
+         * 例子： i3 != i4
+         */
+
+
         Integer i1 = 100;
         Integer i2 = 100;
         Integer i3 = 200;
@@ -15,7 +23,7 @@ public class intTEST {
 
         System.out.println(i1 == i2);
         System.out.println(i3 == i4);
-
+        System.out.println();
 
         Double d1 = 100.0;
         Double d2 = 100.0;
@@ -24,6 +32,14 @@ public class intTEST {
 
         System.out.println(d1 == d2);
         System.out.println(d3 == d4);
+        System.out.println();
+
+
+        /**
+         * 低精度与高精度计算会自动转为高精度，
+         * 装箱后都是对象，所以 equals 比较是False
+         *
+         */
 
 
         Integer a = 1;
@@ -59,7 +75,7 @@ public class intTEST {
         System.out.println("测试 == 于 equals  ---------------------------");
         System.out.println(v1 == v2);
 
-        //这里调用的是Value 中的equals方法 如果没有重写则调用的是Object中的equals方法  结束 true
+        //这里调用的是Value 中的equals方法 如果没有重写则调用的是Object中的equals方法
         //Object中的 equals方法本质上还是用 == 比较的   结果 false
         System.out.println(v1.equals(v2));
     }

@@ -3,6 +3,7 @@ package array;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,5 +30,16 @@ public class testArray {
         //Array 转 String
         String join = StringUtils.join(array1, "-");
         System.out.println("4:  " + join);
+
+        /**
+         * 数组转LIST 用asList时 无法进行add remove 等操纵
+         * 原因：Arrays.asList方法返回的ArrayList是继承自AbstractList同时实现了RandomAccess和Serializable接口
+         * AbstractList 这个类定义的add remove set 等方法是直接拋异常的： throw new UnsupportedOperationException();
+         * 解决： List<String> stringList = new ArrayList<>(Arrays.asList(arr));
+         */
+        //数组转list
+        String[] arr = {"aa","bb","cc","dd"};
+        List<String> stringList =  Arrays.asList(arr);
+
     }
 }

@@ -7,9 +7,9 @@ public class InputStreamTest {
     public static void main(String[] args) {
 
 
-        //getInputStream();
+        getInputStream();
 
-        getObjectStream();
+        //getObjectStream();
     }
 
     public static void getInputStream(){
