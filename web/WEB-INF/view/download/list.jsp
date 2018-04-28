@@ -17,7 +17,11 @@
 <table>
     <tr><th >下载一览</th></tr>
     <c:forEach var="row" varStatus="i" items="${file}">
-        <tr><td>${row.name}</td><td><a href="javascript:void (0)" onclick="checkFile('${row.id}')">下载</a></td></tr>
+        <tr>
+            <td>${row.name}</td>
+            <td><a href="javascript:void (0)" onclick="checkFile('${row.id}')">下载</a></td>
+            <td><a href="javascript:void (0)" onclick="checkFile01('${row.id}')">下载01</a></td>
+        </tr>
     </c:forEach>
 
 </table>
@@ -30,7 +34,7 @@
     var urls = {
         listUrl: joinUrl('/downLoad/list'),
         checkUrl: joinUrl('/downLoad/checkFile'),
-        downloadUrl:joinUrl('/downLoad/download'),
+        downloadUrl:joinUrl('/downLoad/download01'),
         delFile:joinUrl('/downLoad/delFile')
     };
     function checkFile(id) {
@@ -53,6 +57,10 @@
                 console.log(data);
             }
         });
+    }
+
+    function checkFile01(id) {
+        window.location.href=urls.downloadUrl;
     }
 </script>
 </html>
