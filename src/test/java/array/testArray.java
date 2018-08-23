@@ -41,5 +41,12 @@ public class testArray {
         String[] arr = {"aa","bb","cc","dd"};
         List<String> stringList =  Arrays.asList(arr);
 
+
+        String array[] = {"h","e","l","l","o"};
+        array[1] = "q";
+
+        System.out.println("5:" + Arrays.toString(array));
+        System.out.println();
+
     }
 }
