@@ -14,8 +14,8 @@ public class InputStreamTest {
 
     public static void getInputStream(){
 
-        File f = new File("C:\\Users\\majunsheng\\Desktop\\Linux入门.txt");
-        File f2 = new File("C:\\Users\\majunsheng\\Desktop\\Linux入门3.txt");
+        File f = new File("D:\\tt.txt");
+        File f2 = new File("D:\\tttt.txt");
 
         byte[] buffer = new byte[512];
 
@@ -55,6 +55,7 @@ public class InputStreamTest {
                 System.out.print(str);
                 outFile.write(buffer,0,ch);  //ch 防止最后一次读取的字节数小于buffer的长度
             }*/
+
 
             while ((ch = inReamder.read()) != -1){
                 count ++;

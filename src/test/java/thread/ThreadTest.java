@@ -9,7 +9,7 @@ public class ThreadTest {
     public static void main(String[] args) {
 
 
-        getCallable();
+        getMyThread();
     }
 
 
@@ -25,6 +25,7 @@ public class ThreadTest {
                 Thread t2 = new MyThread();
 
                 t1.start();
+                t1.setName("线程1");
                 t2.start();
             }
         }

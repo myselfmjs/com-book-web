@@ -29,6 +29,7 @@ class Producer implements Runnable {
                 if(b.flag){  //wait()必须在同步代码块内部，不仅因为必须持有锁才能睡眠，而且对锁这个资源的判断会出现混乱
                     try{
                         Bread.class.wait();
+                        System.out.println("请等待消费者购买------");
                     }catch(InterruptedException i){}
                 }
                 produce("面包");
@@ -59,6 +60,7 @@ class Consumer implements Runnable {
                 if(!b.flag){
                     try{
                         Bread.class.wait();
+                        System.out.println("请等待面包生成------");
                     }catch(InterruptedException i){}
                 }
                 System.out.println(Thread.currentThread().getName()+"----消费者-------------"+consume());
