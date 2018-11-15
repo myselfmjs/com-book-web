@@ -98,6 +98,14 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!--  Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库  -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
         <!--Spring 配置End-->
         <!--<dependency>
             <groupId>org.springframework</groupId>

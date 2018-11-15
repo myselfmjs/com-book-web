@@ -12,7 +12,7 @@ public class Test {
         ManDecoratorA manDecoratorA = new ManDecoratorA();
         ManDecoratorB manDecoratorB = new ManDecoratorB();
 
-        manDecoratorA.setPerson(man);
+        //manDecoratorA.setPerson(man);
         //manDecoratorA.eat();
 
         manDecoratorB.setPerson(manDecoratorA);
