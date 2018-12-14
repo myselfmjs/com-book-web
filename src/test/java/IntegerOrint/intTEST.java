@@ -1,6 +1,8 @@
 package IntegerOrint;
 
 
+import java.math.BigDecimal;
+
 /**
  * 装箱于拆箱测试
  */
@@ -8,6 +10,10 @@ public class intTEST {
 
     public static void main(String[] args) {
 
+
+
+        String result = new BigDecimal("1").subtract(new BigDecimal("0.9")) .toString();
+        System.out.println(result);
         /**
          *装箱调用的是 valueOf() 方法
          * Integer 的 valueOf() 方法 有个值域 -128 ~127
@@ -71,7 +77,7 @@ public class intTEST {
         Value v2 = new Value();
 
         v1.i = 100;
-        v2.i = 300;
+        v2.i = 100;
         System.out.println("测试 == 于 equals  ---------------------------");
         System.out.println(v1 == v2);
 

@@ -96,7 +96,7 @@ public class reflectDemo {
         }
     }
     private static void MethodGet() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        Class<?> aClass = Class.forName("Stream.Student");
+        Class<?> aClass = Class.forName("io.Stream.Student");
         //无参调用
         Method method = aClass.getMethod("GetInvoke");
         Object invoke = method.invoke(aClass.newInstance());
